@@ -6,14 +6,14 @@ pipeline {
         CONTAINER_NAME = "nodejs-app"
     }
     stages {
-        stage('Checkout Code') {
+        stage('Code') {
             steps {
-                git url: 'https://github.com/RupeshSaxena0209/nodejs-demo-app.git', branch: "main"
+                git branch: 'main', url: 'https://github.com/RupeshSaxena0209/nodejs-demo-app.git'
             }
         }
-        stage('Install Dependencies & Run Tests') {
+        stage('Run Tests') {
             steps {
-                sh 'npm install'
+                sh 'sudo apt install npm'
                 sh 'npm test'
             }
         }
