@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'install npm'
+                sh 'npm install'
                 sh 'npm test'
             }
         }
