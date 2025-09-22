@@ -2,13 +2,13 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
-        IMAGE_NAME = "your-dockerhub-username/nodejs-demo-app"
+        IMAGE_NAME = "rupesh329/nodejs-demo-app"
         CONTAINER_NAME = "nodejs-app"
     }
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-username/nodejs-demo-app.git'
+                git url: 'https://github.com/RupeshSaxena0209/nodejs-demo-app.git', branch: "main"
             }
         }
         stage('Install Dependencies & Run Tests') {
